@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Repository](https://github.com/jeancarlosruiz/ip-address-tracker)
-- Live Site URL: [Live Site](https://your-live-site-url.com)
+- Solution URL: [Repository](https://github.com/jeancarlosruiz/ip-address-tracker-main)
+- Live Site URL: [Live Site](https://jeancarlosruiz.github.io/ip-address-tracker-main/)
 
 ## My process
 
