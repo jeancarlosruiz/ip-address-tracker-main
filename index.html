@@ -1,17 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | IP Address Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="/sass/main.scss" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite App</title>
-  <link rel="stylesheet" href="/sass/main.scss">
-</head>
+  <body>
+    <main>
+      <h1 class="visually-hidden">Only screen readers</h1>
+      <div class="ip-tracker">
+        <form class="form" action="#">
+          <label
+            class="title | clr-neutral-100 fs-900 fw-medium"
+            for="ip-address"
+          >
+            IP Address Tracker
+          </label>
+          <div class="wrapper">
+            <input
+              class="search-input | input"
+              type="text"
+              id="ip-address"
+              placeholder="Search for any IP address or domain"
+            />
+            <button class="submit-btn | button" type="submit">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="11"
+                height="14"
+                role="img"
+                aria-describedby="icon-arrow"
+              >
+                <title id="icon-arrow">Icon arrow</title>
+                <path
+                  fill="none"
+                  stroke="#FFF"
+                  stroke-width="3"
+                  d="M2 1l6 6-6 6"
+                />
+              </svg>
+            </button>
+          </div>
+          <p class="error hidden"></p>
+        </form>
+        <div class="tracker-info">
+          <div class="wrapper flex-group-1">
+            <h2 class="fs-300 uppercase fw-bold">IP Address</h2>
+            <p class="ip-address | fs-600 clr-neutral-900 fw-medium"></p>
+          </div>
+          <div class="wrapper flex-group-1">
+            <h2 class="fs-300 uppercase fw-bold">Location</h2>
+            <p class="location | fs-600 clr-neutral-900 fw-medium"></p>
+          </div>
+          <div class="wrapper flex-group-1">
+            <h2 class="fs-300 uppercase fw-bold">Timezone</h2>
+            <p class="timezone | fs-600 clr-neutral-900 fw-medium"></p>
+          </div>
+          <div class="wrapper flex-group-1">
+            <h2 class="fs-300 uppercase fw-bold">ISP</h2>
+            <p class="isp | fs-600 clr-neutral-900 fw-medium"></p>
+          </div>
+        </div>
+      </div>
+      <div id="map"></div>
+    </main>
 
-<body>
-
-  <script type="module" src="/main.js"></script>
-</body>
-
+    <script type="module" src="/main.js"></script>
+  </body>
 </html>

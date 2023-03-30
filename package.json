@@ -14,5 +14,8 @@
     "vite": "^2.9.9",
     "vite-plugin-html-purgecss": "^0.1.1"
   },
-  "browserslist": "> 0.5%, not dead, not op_mini all"
+  "browserslist": "> 0.5%, not dead, not op_mini all",
+  "dependencies": {
+    "gh-pages": "^5.0.0"
+  }
 }

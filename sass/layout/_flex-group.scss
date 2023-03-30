@@ -4,8 +4,11 @@
 
 .flex-group-1 {
   display: flex;
-  flex-wrap: wrap;
-  column-gap: var(--flex-column-gap, $flex-group-gap);
-  row-gap: var(--flex-row-gap, calc($flex-group-gap) / 2);
-  width: fit-content;
+
+  flex-direction: column;
+  gap: size(8);
+
+  @include mq(medium) {
+    gap: size(14);
+  }
 }

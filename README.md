@@ -1,94 +1,90 @@
-# Website Starter Template SASS
+# Frontend Mentor - IP address tracker
+
+![Design preview for the IP address tracker coding challenge](./design/desktop-preview.jpg)
 
 ## Table of contents
 
-- [Architecture](#architecture)
-  - [Abstracts](#abstracts)
-  - [Base](#base)
-  - [Components](#components)
-  - [Layout](#layout)
-  - [Utilities](#utilities)
-  - [Main](#main)
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-## Architecture
+## Overview
 
-### Abstracts
+### The challenge
 
-In abstracts, create the following files:
+Users should be able to:
 
-#### breakpoints.scss
+- View the optimal layout for each page depending on their device's screen size
+- See hover states for all interactive elements on the page
+- See their own IP address on the map on the initial page load
+- Search for any IP addresses or domains and see the key information and location
 
-Include a sass map with three generic breakpoints (I use 35em, 50em, and 65em)
+### Screenshot
 
-#### colors.scss
+![](./screenshot.jpg)
 
-Include a sass map with some primary and neutral colors
+### Links
 
-#### functions.scss
+- Solution URL: [Repository](https://github.com/jeancarlosruiz/ip-address-tracker)
+- Live Site URL: [Live Site](https://your-live-site-url.com)
 
-Include our function to get colors out of our colors map
+## My process
 
-#### mixins.scss
+### Built with
 
-Include our media query mixin
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
 
-#### sizes.scss
+### What I learned
 
-Include a bunch of custom sizes which work with functions.scss.
+Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
-#### typography.scss
+To see how you can add code snippets, see below:
 
-Includes a map of font-sizes, and variables related to font-family and other font-related stuff
+```html
+<h1>Some HTML code I'm proud of</h1>
+```
 
-### Base
+```css
+.proud-of-this-css {
+  color: papayawhip;
+}
+```
 
-In base, create:
+```js
+const proudOfThisFunc = () => {
+  console.log('🎉');
+};
+```
 
-#### general.scss
+If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
-Includes a general style to the body tag in our project, this can always change depending on the project itself.
+### Continued development
 
-#### reset.scss
+Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
 
-Includes a very basic reset and can be updated on each project.
+### Useful resources
 
-### Components
+- [Using Google Maps static tiles with Leaflet](https://gis.stackexchange.com/questions/225098/using-google-maps-static-tiles-with-leaflet)
 
-#### buttons.scss
+- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
-Include some default removed from the buttons and add some transitions and styles for two defferent data-type button (accent, outline).
+## Author
 
-#### hamburger
-
-Include a hamburger button to reuse it in every project.
-
-### Layout
-
-### Utilities
-
-In utilities, create
-
-#### colors.scss
-
-An @each loop to create utility classes for text and background colors based on the colors in abstracts
-
-#### font-sizes.scss
-
-An @each loop to create utility classes based on the font sizes map in our typography
-
-#### sizing.scss
-
-An @each loop to create utility classes based on sizes in abstracts
-The index.scss in each folder has an @forward for every file in that folder
-
-### Main
-
-The main.scss has a @use for every folder, except for abstracts/
+- Website - [Jean Carlos Ruiz (Portfolio)](https://www.your-site.com) (Building website)
+- Frontend Mentor - [@jeancarlosruiz](https://www.frontendmentor.io/profile/jeancarlosruiz)
 
 ## Acknowledgments
 
-More than grateful to these amazing people who have been helping me throughout this process and building my template based on their references:
-
-- [Josh W Comeau](https://www.joyofreact.com/)
-- [Desarrollo Útil](https://www.youtube.com/@DesarrolloUtil)
+This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.

@@ -1,28 +1,25 @@
 // Diferentes font-sizes que tendran lugar en el folder utilities para crear clases que podremos usar dentro de nuestro html.
 
 // Font-family
-$ff-sans: 'Lato', sans-serif;
-$ff-serif: 'Abril Fatface', serif;
+$ff-sans: 'Rubik', sans-serif;
 
 $ff-base: $ff-sans;
-$ff-accent: $ff-serif;
 
 //Font-sizes
 
 $font-sizes: (
-  900: clamp(2.5rem, 0.5rem + 10vw, 5rem),
-  800: clamp(2.5rem, 0.5rem + 7vw, 3.75rem),
-  600: clamp(1.4rem, 0.5rem + 3vw, 1.6875rem),
-  500: 1.3125rem,
+  // 26px - 32px
+  900: clamp(1.625rem, 1.3846rem + 1.0256vw, 2rem),
+  // 20 - 26px
+  600: clamp(1.25rem, 1.0096rem + 1.0256vw, 1.625rem),
+  // 18px
   400: 1.125rem,
-  300: 1rem,
+  // 10 - 12px
+  300: clamp(0.625rem, 0.5449rem + 0.3419vw, 0.75rem)
 );
 
 //Font-weights
 
 $fw-400: 400;
 $fw-500: 500;
-$fw-600: 600;
 $fw-700: 700;
-$fw-800: 800;
-$fw-900: 900;
