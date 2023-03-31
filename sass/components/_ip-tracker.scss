@@ -8,7 +8,6 @@
   display: grid;
   align-items: center;
   justify-items: center;
-  gap: size(24);
   z-index: 1000;
   position: relative;
 
@@ -34,6 +33,7 @@
     width: 100%;
     display: flex;
     margin-block-start: size(30);
+    margin-block-end: size(24);
 
     .input {
       width: 100%;
@@ -63,6 +63,7 @@
   top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin-block-start: size(30);
 
   h2 {
     letter-spacing: 1.46px;
@@ -75,6 +76,7 @@
     gap: 0;
     text-align: left;
     padding-block: size(38);
+    margin-block-start: 0;
 
     .wrapper {
       padding-inline: size(32);
