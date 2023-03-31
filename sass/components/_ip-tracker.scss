@@ -10,6 +10,7 @@
   justify-items: center;
   gap: size(24);
   z-index: 1000;
+  position: relative;
 
   @include mq(medium) {
     background-image: url(/images/pattern-bg-desktop.png);
@@ -59,7 +60,9 @@
   gap: size(24);
   line-height: 1;
   position: absolute;
-  transform: translateY(60%);
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   h2 {
     letter-spacing: 1.46px;
@@ -72,7 +75,6 @@
     gap: 0;
     text-align: left;
     padding-block: size(38);
-    transform: translateY(120%);
 
     .wrapper {
       padding-inline: size(32);

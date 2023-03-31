@@ -3,9 +3,9 @@
 // SELECTING ELEMENTS //
 ///////////////////////
 
+import imgUrl from './images/icon-location.svg';
 const form = document.querySelector('.form');
 const searchIp = document.querySelector('.search-input');
-const submitBtn = document.querySelector('.submit-btn');
 const ipAddress = document.querySelector('.ip-address');
 const location = document.querySelector('.location');
 const timezone = document.querySelector('.timezone');
@@ -13,7 +13,6 @@ const isp = document.querySelector('.isp');
 const error = document.querySelector('.error');
 const API_KEY = 'at_oxyxVq9YzKHakPxDxrTFPYlFyy4FK';
 
-let url;
 let ipData;
 let locationData;
 let timezoneData;
@@ -22,12 +21,7 @@ let ipExpresion = '';
 let lat;
 let lng;
 let map;
-
-const myIcon = L.icon({
-  iconUrl: '/images/icon-location.svg',
-  iconSize: [46, 56],
-  iconAnchor: [22, 94],
-});
+const ownGeoLocation = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}`;
 
 //////////////////////////////////////
 // FUNCTIONS TO DO NOT REPEAT CODE //
@@ -58,19 +52,33 @@ const mapLocation = function (lat, lng) {
     subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
   }).addTo(map);
 
+  const myIcon = L.icon({
+    iconUrl: imgUrl,
+    iconSize: [46, 56],
+    iconAnchor: [22, 94],
+  });
+
   L.marker(coords, { icon: myIcon }).addTo(map).openPopup();
 };
 
-url = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}`;
-fetch(url)
-  .then(response => response.json())
-  .then(data => {
-    lat = data.location.lat;
-    lng = data.location.lng;
+const ownLocation = async function (url) {
+  try {
+    const resLocation = await fetch(url);
+    if (!resLocation.ok)
+      throw new Error('Something went wrong through the process.');
+
+    const dataLocation = await resLocation.json();
+    lat = dataLocation.location.lat;
+    lng = dataLocation.location.lng;
 
     mapLocation(lat, lng);
-    getGeoData(data);
-  });
+    getGeoData(dataLocation);
+  } catch (err) {
+    console.error('There is an error in the request:', err);
+  }
+};
+
+ownLocation(ownGeoLocation);
 
 /////////////////////////////
 // ADDEVENT FUNCTIONALITIES //
@@ -85,21 +93,13 @@ form.addEventListener('submit', e => {
     )
   ) {
     ipExpresion = searchIp.value;
-    url = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipExpresion}`;
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        lat = data.location.lat;
-        lng = data.location.lng;
-        console.log(data);
-        mapLocation(lat, lng);
-        getGeoData(data);
-      });
+    const requestGeoLocation = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipExpresion}`;
+    ownLocation(requestGeoLocation);
     error.classList.add('hidden');
     error.innerHTML = '';
   } else {
     error.classList.remove('hidden');
-    error.innerHTML = 'This IP doesnt exits, please try again';
+    error.innerHTML = 'This IP does not exist, please try again.';
   }
 
   searchIp.value = '';
