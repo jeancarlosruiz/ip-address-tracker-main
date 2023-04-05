@@ -11,7 +11,7 @@ const location = document.querySelector('.location');
 const timezone = document.querySelector('.timezone');
 const isp = document.querySelector('.isp');
 const error = document.querySelector('.error');
-const API_KEY = 'at_oxyxVq9YzKHakPxDxrTFPYlFyy4FK';
+const API_KEY = 'at_YJJlxMZoK3lKFi1nrJVyVEsqdEPvd';
 
 let ipData;
 let locationData;
@@ -22,7 +22,6 @@ let lat;
 let lng;
 let map;
 const ownGeoLocation = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}`;
-
 //////////////////////////////////////
 // FUNCTIONS TO DO NOT REPEAT CODE //
 ////////////////////////////////////
